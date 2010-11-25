@@ -19,5 +19,5 @@ gen_fibs() ->
 gen_fibs([H1,H2|_T]=L) when (H1 + H2) < 4000000 ->
     gen_fibs([H1+H2] ++ L);
 gen_fibs(L) ->
-    lists:filter(fun(X) ->
-			 X rem 2 == 0 end, L).
+    [X || X <- L,
+	  X rem 2 == 0].
