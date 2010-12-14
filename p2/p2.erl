@@ -17,7 +17,7 @@ sum([H|T],Acc) ->
 gen_fibs() ->
     gen_fibs([2,1]).
 gen_fibs([H1,H2|_T]=L) when (H1 + H2) < 4000000 ->
-    gen_fibs([H1+H2] ++ L);
+    gen_fibs([H1+H2|L]);
 gen_fibs(L) ->
     [X || X <- L,
 	  X rem 2 == 0].
